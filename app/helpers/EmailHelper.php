@@ -62,7 +62,7 @@ class EmailHelper implements InjectionAwareInterface
   public function sendEmail($receiverEmail, $receiverName, $subject, $body) {
     $mail = $this->getClient();
     $mail->addAddress($receiverEmail, $receiverName);
-
+    $mail->CharSet = "UTF-8";
     $mail->isHTML(true);
     $mail->Subject = $subject;
     $mail->Body = $body;
